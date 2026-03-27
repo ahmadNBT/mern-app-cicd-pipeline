@@ -7,6 +7,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// server home route
+app.get('/', (req, res) => {
+  res.json({ status: 'Backend is running!' });
+});
+
+
 // Test route
 app.get('/api/health', (req, res) => {
   res.json({ status: 'Backend is running!' });

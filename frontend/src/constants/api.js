@@ -1,0 +1,1 @@
+export const backendBaseURL = 'https://mern-app-cicd-pipeline.onrender.com/';

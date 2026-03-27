@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
+import { backendBaseURL } from './constants/api';
 
 function App() {
   const [status, setStatus] = useState('Loading...');
 
   useEffect(() => {
-    fetch('/api/health')
+    fetch(`${backendBaseURL}/api/health`)
       .then(res => res.json())
       .then(data => setStatus(data.status));
   }, []);
