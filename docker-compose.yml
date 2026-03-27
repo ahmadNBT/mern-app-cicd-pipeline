@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  backend:
+    image: ${DOCKER_USERNAME}/mern-backend:latest
+    restart: always
+    environment:
+      - MONGO_URI=${MONGO_URI}
+      - PORT=5000
+    ports:
+      - "5000:5000"
+
+  frontend:
+    image: ${DOCKER_USERNAME}/mern-frontend:latest
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
