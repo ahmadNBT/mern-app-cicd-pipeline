@@ -1,7 +1,10 @@
 FROM node:20-alpine
-WORKDIR /
-COPY package*.json ./
-RUN npm cache clean --force && npm install
-COPY . .
+
+WORKDIR /app
+COPY app/package*.json ./
+RUN npm ci
+COPY app/ .
 EXPOSE 5000
+
+# start server
 CMD ["node", "server.js"]
