@@ -1,9 +1,9 @@
 FROM node:20-alpine
 
 WORKDIR /app
-COPY app/package*.json ./
+COPY package*.json ./
 RUN npm ci
-COPY app/ .
+COPY . .
 EXPOSE 5000
 
 # start server
