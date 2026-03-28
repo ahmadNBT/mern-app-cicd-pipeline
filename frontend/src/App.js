@@ -5,14 +5,14 @@ function App() {
   const [status, setStatus] = useState('Loading...');
 
   useEffect(() => {
-    fetch(`${backendBaseURL}/api/health`)
+    fetch(`${backendBaseURL}api/health`)
       .then(res => res.json())
       .then(data => setStatus(data.status));
   }, []);
 
   return (
     <div>
-      <h1>My MERN App ...... Ahmad</h1>
+      <h1>My MERN App ...... Ahmad updated from github actions</h1>
       <p>Backend says: {status}</p>
     </div>
   );
